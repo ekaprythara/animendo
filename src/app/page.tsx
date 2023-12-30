@@ -23,7 +23,7 @@ const Home = async () => {
             </a>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-5">
-            {topAnime.data.map((anime) => (
+            {topAnime.data.map((anime: any) => (
               <Link href={`/anime/${anime.mal_id}`} key={anime.mal_id}>
                 <Image
                   src={anime.images.webp.large_image_url}
@@ -48,8 +48,8 @@ const Home = async () => {
         <div>
           <h1 className="text-4xl">Rekomendasi Anime</h1>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-5">
-            {recommendedAnime.data.map((anime) =>
-              anime.entry.map((entry) => (
+            {recommendedAnime.data.map((anime: any) =>
+              anime.entry.map((entry: any) => (
                 <div key={entry.mal_id}>
                   <Image
                     src={entry.images.webp.large_image_url}

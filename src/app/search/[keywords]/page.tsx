@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Page = async ({ params }) => {
+const Page = async ({ params }: { params: { keywords: string } }) => {
   const { keywords } = params;
   const decodedKeywords = decodeURI(keywords);
 
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${decodedKeywords}`
   );
-  const result = await response.json();
+  const result: any = await response.json();
 
   return (
     <section className="px-5 lg:px-20 container my-10 mx-auto">
@@ -19,7 +19,7 @@ const Page = async ({ params }) => {
         </h1>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5">
-          {result.data.map((anime) => (
+          {result.data.map((anime: any) => (
             <Link href={`/anime/${anime.mal_id}`} key={anime.mal_id}>
               <Image
                 src={anime.images.webp.image_url}

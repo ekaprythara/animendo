@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import YouTube from "react-youtube";
 import { FaXmark } from "react-icons/fa6";
 
-const VideoPlayer = ({ youtubeId }) => {
+const VideoPlayer = ({ youtubeId }: { youtubeId: string }) => {
   const [isClose, setIsClose] = useState(false);
 
   const options = {

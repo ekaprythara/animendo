@@ -1,7 +1,7 @@
 import React from "react";
 import VideoPlayer from "@/components/VideoPlayer";
 
-const Anime = async ({ params }) => {
+const Anime = async ({ params }: { params: { mal_id: number } }) => {
   const { mal_id } = params;
 
   const response = await fetch(

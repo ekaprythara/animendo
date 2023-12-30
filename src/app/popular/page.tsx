@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const PopularPage = () => {
   const [page, setPage] = useState(1);
-  const [topAnime, setTopAnime] = useState([]);
+  const [topAnime, setTopAnime] = useState<any>([]);
   const [lastPage, setLastPage] = useState(1);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const PopularPage = () => {
         <div>
           <h1 className="text-4xl text-center">Anime Populer</h1>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-5">
-            {topAnime.data?.map((anime) => (
+            {topAnime.data?.map((anime: any) => (
               <div key={anime.mal_id}>
                 <Image
                   src={anime.images.webp.large_image_url}
